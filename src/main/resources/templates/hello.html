@@ -40,7 +40,11 @@
           xhttp.onload = function() {
             let URL = 'http://';
             URL = URL.concat(this.responseText);
-            location.replace(URL);
+            if( URL.includes("fail")) {
+                location.replace("#");
+            } else {
+                location.replace(URL);
+            }
           }
           xhttp.open("GET", "/getNearbyClouldet");
           xhttp.send();

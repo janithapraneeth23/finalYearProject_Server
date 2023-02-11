@@ -1,10 +1,11 @@
 package com.janitha.videoenhancer.serverAtCloud.app.controller;
 
 import com.janitha.videoenhancer.serverAtCloud.app.config.EnvConfig;
+import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.servlet.http.HttpServletRequest;
+
 import java.util.UUID;
 
 public class BaseController {

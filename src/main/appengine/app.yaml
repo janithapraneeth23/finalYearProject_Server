@@ -1,4 +1,6 @@
-runtime: java17
-
-log:
-  identifierKey: UUID
+runtime: java
+env: flex
+manual_scaling:
+  instances: 1
+runtime_config:
+  jdk: openjdk8
