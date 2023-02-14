@@ -17,7 +17,7 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        http.authorizeHttpRequests((request) -> request.requestMatchers("/","/*.js","/*.css","/*/*.jpeg", "/*/*.webp","/Welcome","/Register").permitAll().anyRequest().authenticated())
+        http.authorizeHttpRequests((request) -> request.requestMatchers("/","/*.js","/*.css","/*/*.jpeg", "/*/*.webp","/welcome","/register").permitAll().anyRequest().authenticated())
                         .formLogin((form) -> form.loginPage("/login").permitAll())
                 //.formLogin((register) -> register.loginPage("/register").permitAll())
 
@@ -30,7 +30,7 @@ public class WebSecurityConfig {
                 .failureUrl("/login.html?error=true");*/
         return http.build();
     }
-
+/*
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user =
@@ -41,5 +41,5 @@ public class WebSecurityConfig {
                         .build();
 
         return new InMemoryUserDetailsManager(user);
-    }
+    }*/
 }
