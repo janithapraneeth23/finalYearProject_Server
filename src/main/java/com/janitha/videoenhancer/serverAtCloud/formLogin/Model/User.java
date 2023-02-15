@@ -1,12 +1,14 @@
 package com.janitha.videoenhancer.serverAtCloud.formLogin.Model;
 
+import jakarta.persistence.Id;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import java.util.Collection;
 import java.util.List;
-
 @Entity
 @Table(name = "users")
 public class User implements UserDetails {

@@ -9,7 +9,7 @@ spring:
     active: prod
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost/library?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/userdatabasecloud
     username: root
     password:
     maxIdle: "10"

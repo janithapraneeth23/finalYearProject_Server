@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
+<html style="font-size: 16px;" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
@@ -55,30 +56,40 @@
     <section class="u-clearfix u-section-1" id="sec-8438">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-form u-form-1">
-          <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+          <form th:action="@{/register}" method="post" >
             <div class="u-form-group u-form-name">
-              <label for="name-3d7b" class="u-label"> User Name</label>
-              <input type="text" placeholder="Enter your User Name" id="name-3d7b" name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+              <label for="username" class="u-label"> User Name</label>
+              <input type="text" placeholder="Enter your User Name" id="username" name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
             </div>
             <div class="u-form-group">
-              <label for="email-3d7b" class="u-label">Password</label>
-              <input type="text" placeholder="Enter the password" id="email-3d7b" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+              <label for="password" class="u-label">Password</label>
+              <input type="password" placeholder="Enter the password" id="password" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
             </div>
             <div class="u-form-group u-form-group-3">
               <label for="text-7bcd" class="u-label">Confirm Password</label>
-              <input type="text" placeholder="Enter the password again" id="text-7bcd" name="cpassword" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              <input type="password" placeholder="Enter the password again" id="text-7bcd" name="cpassword" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
             </div>
             <div class="u-align-left u-form-group u-form-submit">
-              <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
-              <input type="submit" value="submit" class="u-form-control-hidden">
+              <input type="submit" value="submit" class="u-btn u-btn-submit u-button-style">
             </div>
             <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-            <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+
             <input type="hidden" value="" name="recaptchaResponse">
             <input type="hidden" name="formServices" value="b94b41d7255a06bb142486c46fd5e5f5">
+              <div th:if="${param.error}">
+                  Something went wrong.
+              </div>
+              <div th:if="${param.exist}">
+                  User already exist.
+              </div>
+              <div th:if="${param.success}">
+                  User registered successfully.
+              </div>
+              <a href="/login" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-3">Login</a>
           </form>
         </div>
         <img class="u-image u-image-circle u-image-1" src="images/cloud_images_of_technology.webp" alt="" data-image-width="1024" data-image-height="684">
+
       </div>
     </section>
     
