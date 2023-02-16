@@ -2314,8 +2314,6 @@ a {
 }
 .u-form div.u-form-send-error,
 .u-form div.u-form-send-success {
-  display: none;
-  position: absolute;
   bottom: 0px;
   left: 0px;
   width: 100%;

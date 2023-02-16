@@ -35,8 +35,8 @@
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 1200px) {
   .u-section-1 .u-image-1 {
-    margin-left: 20px;
+    display: none;
   }
 }

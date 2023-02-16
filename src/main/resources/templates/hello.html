@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
+<html style="font-size: 16px;" lang="en" xmlns:th="http://www.w3.org/1999/xhtml"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Mobile App Development, ​We create super-awesome designs, ​Build your dream website today, ​Let&amp;apos;s Get Started, ​How We Help People, Effective Teams, Get in touch">
@@ -132,18 +132,23 @@
                 <div class="u-container-layout u-container-layout-2">
                   <h3 class="u-text u-text-default u-text-1"> Available Cloudlets</h3>
                   <a href="javascript:getAvailableClouldets();" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1">Refresh</a>
-                  <p id="Available_LIST_ID" class="u-text u-text-2"> Available Cloudlets List</p>
+
+                    <p id="Available_LIST_ID" class="u-text u-text-2"> Available Cloudlets List</p>
+
                 </div>
               </div>
             </div>
           </div>
+
         </div>
+
       </div>
     </section>
     <section class="u-align-center u-clearfix u-section-2" id="sec-681f">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-1"> Let's Get Started</h1>
         <a href="javascript:getNearbyClouldet();" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1">Connect me with&nbsp;<br>nearby cloudlet
+
         </a><span class="u-icon u-icon-circle u-palette-1-base u-text-white u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56 56" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-89e1"></use></svg><svg class="u-svg-content" viewBox="0 0 56 56" x="0px" y="0px" id="svg-89e1" style="enable-background:new 0 0 56 56;"><path d="M25,46H10.845C4.865,46,0,41.135,0,35.154C0,31,2.705,26.688,6.433,24.901L7,24.63V24c0-0.127,0.008-0.256,0.015-0.386
 	l0.009-0.16l-0.012-0.21C7.006,23.163,7,23.082,7,23c0-3.859,3.141-7,7-7c0.309,0,0.614,0.027,0.917,0.067
 	c0.078,0.01,0.156,0.023,0.233,0.036c0.267,0.044,0.53,0.102,0.789,0.177c0.035,0.01,0.071,0.017,0.106,0.027
@@ -153,7 +158,13 @@
 	c0.075,0.495,0.501,0.85,0.987,0.85c0.05,0,0.101-0.004,0.151-0.012c2.227-0.337,4.548-0.021,4.684-0.002
 	C52.49,26.872,56,31.161,56,35.972C56,41.501,51.501,46,45.972,46H33H25z"></path></svg></span>
       </div>
+
     </section>
+  <form th:action="@{/logout}" method="post">
+      <div class="u-align-center">
+          <input type="submit" value="Sign Out" class=" u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1"/>
+      </div>
+  </form>
     <section class="u-clearfix u-palette-1-base u-section-3" id="carousel_7650">
       <div class="u-expanded-width u-grey-5 u-shape u-shape-rectangle u-shape-1"></div>
       <div class="u-list u-list-1">

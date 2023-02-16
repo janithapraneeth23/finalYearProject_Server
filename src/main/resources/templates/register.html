@@ -20,6 +20,21 @@
 		"@type": "Organization",
 		"name": ""
 }</script>
+    <script>
+        function validateForm() {
+          let x = document.forms["registerForm"]["password"].value;
+          let y = document.forms["registerForm"]["cpassword"].value;
+          if (x != y) {
+                var q = document.getElementById("passMismatch");
+              if (q.style.display === "none") {
+                q.style.display = "block";
+            }
+            return false;
+          }
+          var z = document.getElementById("passMismatch");
+           z.style.display = "none";
+        }
+    </script>
     <meta name="theme-color" content="#0f497f">
     <meta property="og:title" content="Register">
     <meta property="og:type" content="website">
@@ -55,8 +70,9 @@
       </div></header>
     <section class="u-clearfix u-section-1" id="sec-8438">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+
         <div class="u-form u-form-1">
-          <form th:action="@{/register}" method="post" >
+          <form th:action="@{/register}" onsubmit="return validateForm()" method="post" name="registerForm">
             <div class="u-form-group u-form-name">
               <label for="username" class="u-label"> User Name</label>
               <input type="text" placeholder="Enter your User Name" id="username" name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
@@ -72,27 +88,34 @@
             <div class="u-align-left u-form-group u-form-submit">
               <input type="submit" value="submit" class="u-btn u-btn-submit u-button-style">
             </div>
-            <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-
             <input type="hidden" value="" name="recaptchaResponse">
             <input type="hidden" name="formServices" value="b94b41d7255a06bb142486c46fd5e5f5">
-              <div th:if="${param.error}">
-                  Something went wrong.
-              </div>
-              <div th:if="${param.exist}">
-                  User already exist.
-              </div>
-              <div th:if="${param.success}">
-                  User registered successfully.
-              </div>
-              <a href="/login" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-3">Login</a>
-          </form>
-        </div>
-        <img class="u-image u-image-circle u-image-1" src="images/cloud_images_of_technology.webp" alt="" data-image-width="1024" data-image-height="684">
 
+
+          </form>
+            <div class="u-form-send-message u-form-send-error" th:if="${param.error}">
+                Something went wrong.
+            </div>
+            <div class="u-form-send-message u-form-send-error" th:if="${param.exist}">
+                User already exist.
+            </div>
+            <div class="u-form-send-message u-form-send-success" th:if="${param.success}">
+                User registered successfully.
+            </div>
+            <div class="u-form-send-message u-form-send-error" id="passMismatch" style="display: none;">
+                Those passwords didn’t match. Try again.
+            </div>
+
+
+            <div><a href="/login" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-3">Login</a></div>
+        </div>
+          <picture>
+              <source media="(min-width:650px)" srcset="" sizes="0">
+          <img  src="images/cloud_images_of_technology.webp" class="u-image u-image-circle u-image-1" alt="" data-image-width="1024" data-image-height="684">
+              </picture>
       </div>
     </section>
-    
+
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-41f8"><div class="u-clearfix u-sheet u-sheet-1"></div></footer>
     <section class="u-backlink u-clearfix u-grey-80">
