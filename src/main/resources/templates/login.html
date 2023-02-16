@@ -62,12 +62,7 @@
 <section class="u-clearfix u-section-1" id="sec-3d25">
     <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-form u-form-1">
-            <div th:if="${param.error}">
-                Invalid username and password.
-            </div>
-            <div th:if="${param.logout}">
-                You have been logged out.
-            </div>
+
             <form th:action="@{/login}" method="post" style="padding: 10px;">
                 <div class="u-form-group u-form-name">
                     <label for="name-3d7b" class="u-label"> User Name</label>
@@ -78,8 +73,13 @@
                     <input type="password" placeholder="Enter the password" id="email-3d7b" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
                 </div>
                 <div class="u-align-left">
-
                     <input type="submit" value="submit" class="u-btn u-btn-submit u-button-style">
+                </div>
+                <div th:if="${param.error}">
+                    Invalid username and password.
+                </div>
+                <div th:if="${param.logout}">
+                    You have been logged out.
                 </div>
             </form>
         </div>

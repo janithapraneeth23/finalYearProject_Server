@@ -5,11 +5,15 @@ base-url:
   context: /api/library/v1.0
 
 spring:
+  cloud:
+    gcp:
+      sql:
+        enabled: false
   profiles:
     active: prod
   datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/userdatabasecloud
+    driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password:
     maxIdle: "10"
@@ -19,6 +23,8 @@ spring:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
+
+
 
 log:
   identifierKey: UUID
