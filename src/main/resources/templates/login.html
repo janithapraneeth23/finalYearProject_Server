@@ -71,7 +71,7 @@
                     <input type="submit" value="submit" class="u-btn u-btn-submit u-button-style">
                 </div>
                 <div class="u-form-send-message u-form-send-error" th:if="${param.error}">
-                    Invalid username and password.
+                    <p th:text="${session.error}" th:unless="${session == null}">[...]</p>
                 </div>
                 <div class="u-form-send-message u-form-send-error" th:if="${param.logout}">
                     You have been logged out.

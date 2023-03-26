@@ -54,7 +54,7 @@ public class cloudAppDashboard {
 
     }
 
-    @PostMapping("/registerPlugin")
+    @PostMapping ("/registerCloudlet")
     public String registerPlugin(@RequestBody registerCloudletRequest request) throws IOException, InterruptedException {
 
         cloudletInfo tmp = new cloudletInfo(request.getName(), request.getIp(), request.getPort());
@@ -62,7 +62,7 @@ public class cloudAppDashboard {
         return "Success";
     }
 
-    @PostMapping("/unregisterPlugin")
+    @PostMapping("/unregisterCloudlet")
     public String unregisterPlugin(@RequestBody unregisterCloudletRequest request) throws IOException, InterruptedException {
         cloudletManager.unregisterCloudlet(request.getIp(), request.getPort());
         return "Success";
