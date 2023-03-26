@@ -35,7 +35,7 @@ public class userRegistrationController {
         Exception exception = (Exception) request.getSession().getAttribute(key);
         String error = "";
         if (exception instanceof BadCredentialsException) {
-            error = "Invalid username and password!";
+            error = exception.getMessage();
         } else if (exception instanceof LockedException) {
             error = exception.getMessage();
         } else {

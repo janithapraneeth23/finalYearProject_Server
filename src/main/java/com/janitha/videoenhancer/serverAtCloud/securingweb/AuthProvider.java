@@ -43,7 +43,7 @@ public class AuthProvider implements AuthenticationProvider {
             user = userDetailsService.loadUserByUsername(username);
 
         } catch (UsernameNotFoundException exception) {
-            throw new BadCredentialsException("invalid login details");
+            throw new BadCredentialsException("User name does not exist");
         }
         String password = (String) authentication.getCredentials();
 
