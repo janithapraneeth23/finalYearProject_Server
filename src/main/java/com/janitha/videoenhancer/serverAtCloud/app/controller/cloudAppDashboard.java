@@ -37,7 +37,7 @@ public class cloudAppDashboard {
         if(cloudlets == null) return "No Cloudlets Connected!";
 
         for(cloudletInfo clodulet : cloudlets){
-            strCloudletes += clodulet.getName() + "<>" + clodulet.getIp() + ":" + clodulet.getPort() + " - SL" + "<br>";
+            strCloudletes += clodulet.getName() + "<>" + clodulet.getExternalIp() + ":" + clodulet.getPort() + " - SL" + "<br>";
         }
         //System.out.println(strCloudletes);
         return strCloudletes;
@@ -57,7 +57,7 @@ public class cloudAppDashboard {
     @PostMapping ("/registerCloudlet")
     public String registerPlugin(@RequestBody registerCloudletRequest request) throws IOException, InterruptedException {
 
-        cloudletInfo tmp = new cloudletInfo(request.getName(), request.getIp(), request.getPort());
+        cloudletInfo tmp = new cloudletInfo(request.getName(), request.getIp(), request.getExternalIp(), request.getPort());
         cloudletManager.addCloudlet(tmp);
         return "Success";
     }
