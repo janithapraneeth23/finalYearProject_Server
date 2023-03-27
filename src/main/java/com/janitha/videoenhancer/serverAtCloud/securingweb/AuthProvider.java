@@ -49,7 +49,7 @@ public class AuthProvider implements AuthenticationProvider {
 
 
         if(user.isAccountNonLocked() == false){
-            throw new LockedException("Too many invalid attempts. Account is locked!!");
+            throw new LockedException("Too many invalid attempts. Account is locked!!\n Please contact customer support");
         }else if(!passwordEncoder.matches(password, user.getPassword())){
             processFailedAttempts(username, (User) user);
             throw new BadCredentialsException("invalid login details");
